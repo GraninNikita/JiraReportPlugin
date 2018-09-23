@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<atlassian-plugin key="${atlassian.plugin.key}" name="${project.name}" plugins-version="2">
+    <plugin-info>
+        <description>${project.description}</description>
+        <version>${project.version}</version>
+        <vendor name="${project.organization.name}" url="${project.organization.url}"/>
+        <param name="plugin-icon">images/pluginIcon.png</param>
+        <param name="plugin-logo">images/pluginLogo.png</param>
+    </plugin-info>
+    <!-- add our i18n resource -->
+    <resource type="i18n" name="i18n" location="myPlugin"/>
+    <!-- add our web resources -->
+    <web-resource key="myPlugin-resources" name="myPlugin Web Resources">
+        <dependency>com.atlassian.auiplugin:ajs</dependency>
+        <resource type="download" name="myPlugin.css" location="/css/myPlugin.css"/>
+        <resource type="download" name="myPlugin.js" location="/js/myPlugin.js"/>
+        <resource type="download" name="images/" location="/images"/>
+        <context>myPlugin</context>
+    </web-resource>
+
+    <report name="Due Date Report" i18n-name-key="due-date-report.name" key="due-date-report"
+            class="com.atlassian.plugins.report.DueDateReport">
+        <description key="due-date-report.description">The Due Date Report Plugin</description>
+        <resource name="view" type="velocity" location="/templates/reports/due-date-report/view.vm"/>
+        <resource name="i18n" type="i18n" location="DueDateReport"/>
+        <label key="due-date-report.label"/>
+        <properties>
+            <property>
+                <key>dueDate</key>
+                <name>due-date-report.name</name>
+                <description>due-date-report.description</description>
+                <type>date</type>
+            </property>
+        </properties>
+
+    </report>
+</atlassian-plugin>
