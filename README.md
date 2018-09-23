@@ -22,3 +22,11 @@ Here are the SDK commands you'll use immediately:
 * atlas-create-home-zip -- Creates a test-resources zip of the current application’s home directory
 * atlas-help  -- prints description for all commands in the SDK
 
+### Installing plugin to server
+Project contains [jar archive](target/myPlugin-1.0.0-SNAPSHOT.jar)
+To install plugin In most cases you will need to move or download the file to the 
+```<INSTALL_DIR>/atlassian-jira/WEB-INF/lib directory.```
+
+
+#### Also primitively checked plugin:
+Please take a look at [Document](Primitive%20manual%20testing/TestCases.docx)

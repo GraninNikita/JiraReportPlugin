@@ -29,7 +29,7 @@
             <property>
                 <key>dueDate</key>
                 <name>due-date-report.name</name>
-                <description>due-date-report.description</description>
+                <description>due-date-report.dueDate.description</description>
                 <type>date</type>
             </property>
         </properties>

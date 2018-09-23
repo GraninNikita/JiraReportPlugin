@@ -3,13 +3,13 @@
         #set ($urlPrefix = "${req.contextPath}/secure/IssueNavigator.jspa?reset=true")
         #end
 <table width="100%" class="aui" id="single_groupby_report_table">
-    <thead>
-        <tr>
-            <th colspan="4">
-                <h2>$i18n.getText('due-date-report.name'): $textutils.htmlEncode($searchRequest.name)</h2>
-            </th>
-        </tr>
-    </thead>
+    <!--<thead>-->
+        <!--<tr>-->
+            <!--<th colspan="4">-->
+                <!--<h2>$i18n.getText('due-date-report.name'): $textutils.htmlEncode($searchRequest.name)</h2>-->
+            <!--</th>-->
+        <!--</tr>-->
+    <!--</thead>-->
     <tbody>
 
         <!--<h2>$dueDate</h2>-->
@@ -35,7 +35,7 @@
                 #end
             </td>
 
-            <td nowrap class="assignee">
+            <td class="assignee">
                 #if($issue.getAssignee())
                 $issue.getAssignee().getDisplayName()
                 #else
