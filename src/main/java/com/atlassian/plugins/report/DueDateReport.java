@@ -97,7 +97,7 @@ public class DueDateReport extends AbstractReport {
         return descriptor.getHtml("view", startingParams);
     }
 
-    public List<Issue> findIssues(Date dueDate, String projectKey) throws SearchException, JqlParseException {
+    private List<Issue> findIssues(Date dueDate, String projectKey) throws SearchException {
         String dueDateFormatted = dateFormat.get().format(dueDate);
         ApplicationUser user = jiraAuthenticationContext.getLoggedInUser();
         JqlQueryBuilder queryBuilder = JqlQueryBuilder.newBuilder();
@@ -108,7 +108,7 @@ public class DueDateReport extends AbstractReport {
                 .buildQuery();
         SearchResults results = searchProvider.search(query, user, PagerFilter.getUnlimitedFilter());
 
-        return results.getIssues().size() > 0 ? results.getIssues() : Collections.emptyList();
+        return results.getIssues();
     }
 
     public void validate(ProjectActionSupport action, Map params) {
